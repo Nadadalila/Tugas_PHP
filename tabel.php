@@ -5,48 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        table{
-            border-collapse: collapse;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th{
-            background-color: blue; 
-        }
-    </style>
+    
 </head>
 <body>
-    <table>
-        <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>Kelas</th>
-        </tr>
-        <tr>
-            <td>
-                <?php
-                for ($a=1; $a<=10; $a++){
-                    echo "$a <br>";
-                }
-                ?>
-            </td>
-            <td>
-                <?php
-                for ($b=1; $b<=10; $b++){
-                    echo "Nama Ke $b <br>";
-                }
-                ?>
-            </td>
-            <td>
-                <?php
-                for ($c=10; $c>=1; $c--){
-                    echo "Kelas $c <br>";
-                }
-                ?>
-            </td>
-        </tr>
-    </table>
+   <table border="1">
+    <tr style="background-color: blue;">
+        <th>Nomor</th>
+        <th>Nama</th>
+        <th>Kelas</th>
+    </tr>
+    <?php
+    for($i=1; $i<=10; $i++){
+        if($i % 2 == 0){
+            echo "<tr>";
+        }else {
+            echo "<tr style='background-color: red;'>";
+        }
+        echo "<td>". $i . "</td>";
+        echo "<td>". "Nama ke-" . $i . "</td>";
+        echo "<td>". "Kelas" . (10 - $i + 1) . "</td>";
+        echo "</tr>";
+    }
+    ?>
+
+   </table>
 </body>
 </html>
