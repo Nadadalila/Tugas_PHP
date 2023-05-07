@@ -6,17 +6,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    .header, h1{
+        text-align: center;
+        color: black;
+        padding-top: 3px;
+        padding-bottom: 5px;
+        
+    }
+    .header {
+        background-color : yellow;
+        height : 50px;
+        margin-bottom : 20px;
+    }
+    table{
+        text-align: center;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+</style>
 <body>
+    <div class="header">
+        <h3>DAFTAR NILAI</h3>
+    </div>
     <table border="1">
         <tr>
-            <td>No</td>
-            <td>Nama</td>
-            <td>Tanggal Lahir</td>
-            <td>Umur</td>
-            <td>Alamat</td>
-            <td>Kelas</td>
-            <td>Nilai</td>
-            <td>Hasil</td>
+            <th>Nama</th>
+            <th>Tanggal Lahir</th>
+            <th>Umur</th>
+            <th>Alamat</th>
+            <th>Kelas</th>
+            <th>Nilai</th>
+            <th>Hasil</th>
         </tr>
 
         <?php
@@ -45,7 +67,6 @@
         ?>
         <tr>
             <td><?php echo $data["nama"]; ?></td>
-            <td><?php echo $data["kelas"]; ?></td>
             <td><?php echo $data["tanggal_lahir"]; ?></td>
             <td><?php echo $umur_str ?></td>
             <td><?php echo $data["alamat"]; ?></td>
