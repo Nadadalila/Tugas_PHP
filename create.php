@@ -13,16 +13,15 @@
     <table cellpadding ="10" cellspacing="0" class= "table table-striped">
         <tr>
             <td>ID Pembeli</td>
-            <td><input id="input_id" type="text" name="id_pembeli"></td>
-            <p id="text-error-name"></p>
+            <td><input id="input_id" type="text" name="id_pembeli"><p id="text-error-name"></p> </td>
         </tr>
         <tr>
             <td>Nama Pembeli</td>
-            <td><input id="input_nama"  type="text" name="nama_pembeli"></td>
+            <td><input id="input_nama"  type="text" name="nama_pembeli"><p id="text-error-name"></p></td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td><input id="input_alamat" type="text" name="alamat"></td>
+            <td><input id="input_alamat" type="text" name="alamat"><p id="text-error-name"></p></td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
@@ -35,7 +34,7 @@
         </tr>
         <tr>
             <td>No Telepon</td>
-            <td><input id="input_telepon" type="number" name="no_telepon"></td>
+            <td><input id="input_telepon" type="number" name="no_telepon"><p id="text-error-name"></p></td>
         </tr>
         <tr>
             <td></td>
@@ -47,27 +46,12 @@
 </html>
 
 <script>
-
-    $('#my-button').click(function() {
-		if ($('#input_id').val().length == 0) {
-			$('#input_id').css({"backgroundColor" : "red"});
-			$('#text-error-name').text('-----Silahkan isi ID pembeli terlebih dahulu-----');
-		} else if ($('#input_nama').val().length == 0) {
-			$('#input_nama').css({"backgroundColor" : "red"});
-			$('#text-error-name').text('-----Silahkan isi nama pembeli terlebih dahulu-----');
-        } else if ($('#input_alamat').val().length == 0) {
-			$('#input_alamat').css({"backgroundColor" : "red"});
-			$('#text-error-name').text('-----Silahkan isi alamat terlebih dahulu-----');
-        } else if ($('#input_kelamin').val().length == 0) {
-			$('#input_kelamin').css({"backgroundColor" : "red"});
-			$('#text-error-name').text('Silahkan isi nama pembeli terlebih dahulu');
-        } else if ($('#input_telepon').val().length == 0) {
-			$('#input_telepon').css({"backgroundColor" : "red"});
-			$('#text-error-name').text('-----Silahkan isi nomor telepon terlebih dahulu-----');
-        } else {
-			$('#form_pembeli').submit();
-		}
-	});
-		
-    
+    $('#my-button').click(function(){
+		if ($('#input_id').val().length == 0 || $('#input_nama').val().length == 0 || $('#input_alamat').val().length == 0 ||  $('#input_telepon').val().length == 0){
+			$('#input_id, #input_nama, #input_alamat, #input_telepon').css({"backgroundColor" : "red"});
+			$('#text-error-id, #text-error-name, #text-error-alamat, #text-error-telepon').text('Silahkan isi terlebih dahulu');
+		} else{
+            $('#form_pembeli').submit();
+        }
+    });
 </script>
